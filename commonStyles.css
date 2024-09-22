@@ -432,13 +432,31 @@ body{
 .moveTop img{
  width: 16px;
 }
+.whatsAppChat{
+    position: fixed;
+    bottom: 38px;
+    right: 10px;
+    cursor: pointer;
+    animation: zoom 0.6s infinite alternate;
+}
+.whatsAppChat img{
+    width: 66px;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1); /* Original size */
+    }
+    100% {
+        transform: scale(1.1); /* Zoom in */
+    }
+}
 
 .moveTop{
     width: 30px;
     height: 30px;
     background-color: #415349;
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
     border-radius: 50%;
     display: flex;
@@ -718,6 +736,7 @@ body{
     position: relative;
     width: 100%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-bottom: 6px;
 }
 
 .daysBg{
@@ -738,10 +757,11 @@ body{
 .itenaryHeading{
     padding-left: 24px;
     margin: 0px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 16px;
     line-height: 18px;
     color: var(--heading-color);
+    text-transform: capitalize;
 }
 .itenaryParagraph{
     line-height: 18px;
@@ -885,6 +905,9 @@ body{
    
     .packageDetailsHeading{
         font-size: 20px;
+    }
+    .tagName{
+        padding: 4px 8px;
     }
     
 }

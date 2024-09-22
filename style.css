@@ -548,6 +548,17 @@ body {
     position: relative;
     word-break: break-all;
 }
+@media (max-width: 600px){
+    .cardContents a h2 {
+        word-break: unset !important;
+    }
+    .textStyle{
+        word-break: unset !important;
+    }
+    .serviceCard p{
+        word-break: unset !important;
+    }
+}
 
 .tourPackageCard:hover h2 {
     color: #004b91;
@@ -994,6 +1005,11 @@ section {
     margin-bottom: 30px;
     margin-top: 20px;
 }
+.PackageDetailsContents h6{
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+}
 @media (max-width:767px){
     .whyChooseUs {
         padding-top: 20px;
@@ -1003,8 +1019,8 @@ section {
         font-weight: 600;
     }
     .PackageDetailsContents h6{
-        font-size: 22px;
-        line-height: 25px;
+        font-size: 15px;
+        line-height: 19px;
     }
     .PackageDetailsContents h3{
         font-size: 24px;
