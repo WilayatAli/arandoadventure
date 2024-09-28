@@ -7,6 +7,12 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="commonStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function() {
+        emailjs.init("eW2ciyYtGa58feEzz"); // Initialize EmailJS with your user ID
+       })();
+    </script>
 </head>
 <body>
     <!-- header -->
@@ -101,38 +107,39 @@
             <div class="form-width">
               <div class="contact-page-form" method="post">
                 <!-- <h2>Get in Touch</h2>  -->
-                <form action="contact-mail.php" method="post">
+                <form id="contact-form">
                   <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="single-input-field">
-                      <input type="text" placeholder="Your Name" name="name"/>
-                    </div>
-                  </div>  
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="single-input-field">
-                      <input type="email" placeholder="E-mail" name="email" required/>
-                    </div>
-                  </div>                              
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="single-input-field">
-                      <input type="text" placeholder="Phone Number" name="phone"/>
-                    </div>
-                  </div>  
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="single-input-field">
-                      <input type="text" placeholder="Subject" name="subject"/>
-                    </div>
-                  </div>                
-                  <div class="col-md-12 message-input">
-                    <div class="single-input-field">
-                      <textarea  placeholder="Write Your Message" name="message"></textarea>
-                    </div>
-                  </div>                                                
-                  <div class="single-input-fieldsbtn">
-                    <input type="submit" value="Send Now"/>
-                  </div>                          
-                </div>
-                </form>   
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="single-input-field">
+                              <input type="text" placeholder="Your Name" name="name" required />
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="single-input-field">
+                              <input type="email" placeholder="E-mail" name="email" required />
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="single-input-field">
+                              <input type="text" placeholder="Phone Number" name="phone" />
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="single-input-field">
+                              <input type="text" placeholder="Subject" name="subject" required />
+                          </div>
+                      </div>
+                      <div class="col-md-12 message-input">
+                          <div class="single-input-field">
+                              <textarea placeholder="Write Your Message" name="message" required></textarea>
+                          </div>
+                      </div>
+                      <div class="single-input-fieldsbtn">
+                          <input type="submit" value="Send Now" />
+                      </div>
+                  </div>
+              </form>
+                
               </div>      
             </div>
             <div class="Contact-wrapper-form">
@@ -277,6 +284,40 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.10/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Mail.js library -->
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const fromName = this.name.value;
+            const fromEmail = this.email.value;
+            const phone = this.phone.value;
+            const subject = this.subject.value;
+            const message = this.message.value;
+
+            // Send email using EmailJS
+            emailjs.send('service_9xlik4s', 'template_dpvmxyd', {
+                to_name: 'Your Name', // Replace with the recipient's name or your service name
+                from_name: fromName,
+                reply_to: fromEmail,
+                phone: phone,
+                subject: subject,
+                message: message
+            })
+            .then(response => {
+                console.log('Success:', response);
+                alert('Your message has been sent successfully!');
+                document.getElementById('contact-form').reset(); // Reset the form
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                console.error('Error details:', error.text); // Log detailed error message
+                alert('Failed to send your message. Please try again later.');
+            });
+        });
+    </script>
   </body>
 </html>
 
