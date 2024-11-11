@@ -1,0 +1,162 @@
+body{
+    background-color: #fff !important;
+    background: #fff !important;
+}
+.container_xl{
+    width: 100%;
+    max-width: 1200px;
+    padding-inline: 20px;
+    margin-inline: auto;
+}
+.about_sectiom{
+    padding-block: 60px;
+}
+.container_about{
+    display: flex;
+    gap: 24px;
+}
+.left_side_img{
+    width:40%
+}
+.left_side_img img{
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 30px;
+   
+}
+.right_side_contents{
+    width: 60%;
+}
+.heading_main{
+    font-size: 28px;
+    line-height: 24px;
+    color: #323232;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.about_czech_contents{
+    font-size: 16px;
+    line-height: 19px;
+    color: #6c757d;
+    position: relative;
+}
+.about_czech_contents::before{
+    content:"";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #7a7a7a;
+    top: 6px;
+    left: -12px;
+}
+
+.hosptal_service{
+    flex-direction: row-reverse !important;
+}
+
+.margin-60{
+    margin-top: 60px;
+}
+
+.vision_section{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 60px 30px;
+}
+.vision_container{
+    max-width: 700px;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+}
+.vision_heading{
+    font-size: 32px;
+    line-height: 29px;
+    color: #e97c00;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.vision_title{
+    font-size: 22px;
+    line-height: 22px;
+    color: #3a3a3a;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+.vision_desc{
+    font-size: 16px;
+    line-height: 16px;
+    color: #000000;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.vision_desc_two{
+    font-size: 18px;
+    line-height: 19px;
+    color: #09031a;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.click_text{
+    font-size: 18px;
+    line-height: 19px;
+    color: #000000;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.donate_btn{
+    padding: 14px 24px;
+    border:none;
+    border-radius: 8px;
+    background-color: #1b5809;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 16px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all .3s ease;
+}
+.donate_btn:hover{
+    color: #fff;
+    background-color: #002d8d;
+}
+
+
+
+@media (max-width: 991px){
+    .container_about, .hosptal_service{
+        flex-direction: column !important;
+    }
+    .left_side_img{
+        width:100%
+    }
+    .right_side_contents{
+        width: 100%;
+    }
+}
+@media (max-width: 600px){
+    .donate_btn{
+        padding: 10px 16px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .container_xl {
+        width: 100%;
+        max-width: 1200px;
+        padding-inline: 20px;
+        margin-inline: auto;
+    }
+    .vision_section {
+        padding: 60px 0px;
+    }
+}
