@@ -285,12 +285,16 @@ body{
 .call_time_wrapper .ph_num{
     white-space: nowrap;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 14px;
     color: #004b91;
     position: relative;
+    font-family: "Poppins", sans-serif;
     top: -3px;
     text-align: none;
+}
+.ph_pk{
+    top: 3px !important;
 }
 .nav-bg-color{
     background-color: #004b91;
