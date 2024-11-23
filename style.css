@@ -597,7 +597,10 @@ body {
     margin-bottom: 20px;
     transition: .4s linear;
 }
-
+.serviceCard:hover{
+    background-color: #e9e7e7ea;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 .serviceCard h3{
     font-size: 15px;
     font-weight: 700;
@@ -655,6 +658,11 @@ body {
     width: 23%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    max-height: 180px;
+    overflow: hidden;
+    object-position: center;
+    object-fit: cover;
 }
 
 .gallery-item img {

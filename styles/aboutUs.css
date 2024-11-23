@@ -11,7 +11,7 @@ ul {
     list-style: none;
 }
 .about-us-bg{
-    background-image: url(../images/about-banner.jpg);
+    background-image: url(../images/slider.jpg);
     width: 100%;
     height: 280px;
     background-repeat: no-repeat;
@@ -20,6 +20,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .text-white{
     color: #fff;
